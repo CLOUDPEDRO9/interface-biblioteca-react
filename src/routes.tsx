@@ -1,23 +1,33 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { APP_ROUTES } from './appConfig';
 import PHome from './pages/PHome/PHome';
-import Plogin from './pages/PLogin/PLogin';
-import PLivro from './pages/PLivro/PLivro';
-import PAluno from './pages/PAluno/PAluno';
-import PEmprestimo from './pages/PEmprestimo/PEmprestimo';
+import PLogin from './pages/PLogin/PLogin';
+import PListaAlunos from './pages/PListagem/PListaAlunos/PListaAlunos';
+import PListaEmprestimos from './pages/PListagem/PListaEmprestimos/PListaEmprestimos';
+import PListagemLivros from './pages/PListagem/PListaLivros/PListaLivros';
 
-function AppRoutes () {
+/**
+ * Componente que irá lidar com todas as rotas da aplicação
+ * @returns Um componente web para lidar com as rotas
+ */
+function AppRoutes() {
     return (
         <BrowserRouter>
             <Routes>
+                {/* Quando a rota representada pela variável ROUTE_HOME é acessada, renderiza a página PHome */}
                 <Route path={APP_ROUTES.ROUTE_HOME} element={<PHome />} />
-                <Route path={APP_ROUTES.ROUTE_LOGIN} element={<Plogin />} />
-                <Route path={APP_ROUTES.ROUTE_LIVRO} element={<PLivro />} />
-                <Route path={APP_ROUTES.ROUTE_ALUNO} element={<PAluno />} />
-                <Route path={APP_ROUTES.ROUTE_EMPRESTIMO} element={<PEmprestimo />} />
+                {/* Quando a rota representada pela variável ROUTE_LOGIN é acessada, renderiza a página PLogin */}
+                <Route path={APP_ROUTES.ROUTE_LOGIN} element={<PLogin />} />
+
+                {/* Quando a rota representada pela variável ROUTE_LISTAGEM_ALUNOS é acessada, renderiza a página PListaAlunos */}
+                <Route path={APP_ROUTES.ROUTE_LISTAGEM_ALUNOS} element={<PListaAlunos />} />
+                {/* Quando a rota representada pela variável ROUTE_LISTAGEM_EMPRESTIMOS é acessada, renderiza a página PListaEmprestimos */}
+                <Route path={APP_ROUTES.ROUTE_LISTAGEM_EMPRESTIMOS} element={<PListaEmprestimos />} />
+                {/* Quando a rota representada pela variável ROUTE_LISTAGEM_LIVROS é acessada, renderiza a página PListagemLivros */}
+                <Route path={APP_ROUTES.ROUTE_LISTAGEM_LIVROS} element={<PListagemLivros />} />
             </Routes>
         </BrowserRouter>
-    )
+    );
 }
 
-export default AppRoutes
+export default AppRoutes;
