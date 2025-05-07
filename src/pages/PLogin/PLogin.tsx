@@ -14,7 +14,8 @@ function PLogin() {
             {/* Renderiza o cabeçalho da página */}
             <Cabecalho />
 
-            {/* Renderiza o formulário de login */}
+            {/* Renderiza o formulário de login*/}
+            {/*<LoginForm /> */}
             <LoginForm />
 
             {/* Renderiza o rodapé da página */}
